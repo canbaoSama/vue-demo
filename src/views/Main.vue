@@ -5,11 +5,7 @@
   <div class="maintain">
     <NavHeader></NavHeader>
     <router-view></router-view>
-    <Footer>
-      <template v-slot:one></template>
-      <template v-slot:two><Button type="warning">第二个</Button></template>
-      <template v-slot:three><Button type="warning">第三个</Button></template>
-    </Footer>
+    <Footer></Footer>
   </div>
 </template>
 

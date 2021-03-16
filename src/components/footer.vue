@@ -1,6 +1,6 @@
 <template>
-  <Row class="footer">
-    <Col>底部组建</Col>
+  <Row id="footer">
+    <Col>这里是公共的底</Col>
   </Row>
 </template>
 

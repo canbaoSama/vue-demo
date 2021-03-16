@@ -323,23 +323,3 @@ class SingleList {
 // add1(20) === 21
 
 
-function once(fn) {
-  let a = fn();
-  let func = function() {
-    return a;
-  };
-  return func ;
-}
-
-let a = 1;
-function add() {
-  return a++;
-}
-
-const test = once(add);
-console.log(test());
-console.log(test());
-const test1 = once(add);
-console.log(test1());
-console.log(test1());
-
