@@ -160,8 +160,7 @@ function fun_06(arr) {//不考虑空间复杂度
 }
 // function fun_06(arr) {//考虑空间复杂度适用于数据量大的数组
 //   if(arr.length < 2) return arr;
-//   let data = quickSort(arr,0,arr.length - 1);
-//   return data;
+//   return quickSort(arr,0,arr.length - 1);
 // }
 // function quickSort(arr,start,end) {//基准为数组arr[start]
 //   if(start >= end) return [arr[start]];
