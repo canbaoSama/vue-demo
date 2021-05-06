@@ -1,0 +1,54 @@
+body,.load{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 66vh;
+}
+
+.load::before{
+  content: '';
+  display: block;
+  width: 90px;
+  height: 90px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+}
+.load div{
+  position: absolute;
+  -webkit-perspective: 500;
+  perspective: 500;
+}
+.load div::before{
+  content: '';
+  display: block;
+  width: 80px;
+  height: 380px;
+  background-color: #20e020;
+  border-radius: 40px 40px 0 0;
+  transform-origin: top center;
+  transform: rotateX(-70deg);
+}
+.load div:nth-child(1){transform: rotate(0deg);}
+.load div:nth-child(2){transform: rotate(60deg);}
+.load div:nth-child(3){transform: rotate(120deg);}
+.load div:nth-child(4){transform: rotate(180deg);}
+.load div:nth-child(5){transform: rotate(240deg);}
+.load div:nth-child(6){transform: rotate(300deg);}
+
+@-webkit-keyframes  load{
+  0%{transform: rotate(0deg) scale(1);}
+  50%{transform: rotate(360deg) scale(.4);}
+  100%{transform: rotate(720deg) scale(1);}
+}
+@keyframes  load{
+  0%{transform: rotate(0deg) scale(1);}
+  50%{transform: rotate(360deg) scale(.4);}
+  100%{transform: rotate(720deg) scale(1);}
+}
+.load div,.load::before{
+  transition: all .2s ease;
+}
+/*加载动画*/
+.load{
+  animation: load 2.5s cubic-bezier(0.5,0,0.5,1) infinite;
+}

@@ -11,10 +11,10 @@ import 'iview/dist/styles/iview.css'
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import { isWeiXin, isMobile } from './utils/equipment_type'
-import './utils/mytest'
 import './utils/newVue'
 import animate from 'animate.css'
 import AlleyUI from "./components"
+import './utils/sortAlgorithm'
 
 Vue.config.productionTip = false;
 Vue.prototype.$axios = $axios;

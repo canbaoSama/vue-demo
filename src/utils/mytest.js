@@ -1,3 +1,6 @@
+// 数据结构实现
+
+
 //栈类
 class Stack {
   constructor () {
