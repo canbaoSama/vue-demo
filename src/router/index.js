@@ -57,7 +57,8 @@ export const pcRouter = [
     title: "导航2",
     children: [
       {path: '/',name: 'nav2-1',title: '导航2-1',component: (resolve) => require(['../views/pc/home.vue'],resolve)},
-      {path: '/page',name: 'nav2-2',title: '导航2-2',component: (resolve) => require(['../views/pc/page.vue'],resolve)}
+      {path: '/page',name: 'nav2-2',title: '导航2-2',component: (resolve) => require(['../views/pc/page.vue'],resolve)},
+      {path: '/timezonePicker',name: 'nav2-3',title: '导航2-3',component: (resolve) => require(['../views/pc/timezonePicker.vue'],resolve)}
     ],
   },
   {

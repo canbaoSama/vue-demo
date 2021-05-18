@@ -326,3 +326,21 @@ class SingleList {
 // add1(20) === 21
 
 
+// var multiply = (function () {
+//   var product = 1;
+//
+//   return function(num) {
+//     if(arguments.length == 0){
+//       var result = product;
+//       product = 1;
+//       return result;
+//     }
+//
+//     product *= num;
+//     return arguments.callee;
+//   }
+// })();
+//
+// // 测试代码
+//
+// var product1 = multiply(2)(4)();

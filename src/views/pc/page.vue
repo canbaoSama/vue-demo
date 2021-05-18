@@ -1,6 +1,5 @@
 <template>
-  <Row class="">
-  </Row>
+  <div></div>
 </template>
 
 <script>
@@ -12,6 +11,7 @@
     },
     computed: {},
     methods: {
+
     }
   };
 </script>

@@ -46,6 +46,7 @@
     created () {
     },
     mounted () {
+      console.log(this.$el);
     }
   }
 </script>

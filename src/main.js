@@ -14,7 +14,7 @@ import { isWeiXin, isMobile } from './utils/equipment_type'
 import './utils/newVue'
 import animate from 'animate.css'
 import AlleyUI from "./components"
-import './utils/sortAlgorithm'
+import './utils/mytest'
 
 Vue.config.productionTip = false;
 Vue.prototype.$axios = $axios;
@@ -29,6 +29,7 @@ Vue.use(iView);
 Vue.use(MintUI);
 Vue.use(animate);
 Vue.use(AlleyUI);
+
 
 //axios 全局拦截，并在header中添加token信息
 $axios.interceptors.request.use(
