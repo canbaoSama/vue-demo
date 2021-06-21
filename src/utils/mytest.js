@@ -255,7 +255,7 @@ class SingleList {
 
 
 //自定义绑定事件
-// var listenerList = {
+//var listenerList = {
 //   "message": function(e) {
 //     console.log(e);
 //   }
@@ -297,6 +297,29 @@ class SingleList {
 // })
 //
 // bob.trigger("message",{a:"senbo"});//测试一下
+
+// class Bob {
+//   constructor(props) {
+//     this.props = props;
+//     this.listenerList = {};
+//   }
+//   on(eventName,callback) {
+//     if(typeof eventName === 'string' && typeof callback === 'function') {
+//       this.listenerList[eventName] = callback
+//     }
+//   }
+//   trigger(eventName,data) {
+//     this.listenerList[eventName](data);
+//   }
+//   fire(eventName) {
+//     this.listenerList[eventName] = undefined;
+//   }
+// }
+// let bob = new Bob();
+// bob.on('message',function (data){
+//   console.log("事件已绑定" + data.a);
+// })
+// bob.trigger('message',{a:'senbo'});
 
 
 
@@ -341,6 +364,19 @@ class SingleList {
 //   }
 // })();
 //
-// // 测试代码
+// //在最后没有参数时调用valueof
+// function add() {
+//   let args = [].slice.call(arguments);
 //
-// var product1 = multiply(2)(4)();
+//   let fn = function () {
+//     let args_new = [].slice.call(arguments);
+//     return add.apply(null,args.concat(args_new));
+//   }
+//
+//   fn.valueOf = function () {
+//     return args.reduce((a,b) => a+b);
+//   }
+//
+//   return fn;
+// }
+// console.log("数据为" + add(2)(4)(1,1));

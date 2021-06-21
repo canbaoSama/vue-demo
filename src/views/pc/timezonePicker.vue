@@ -111,30 +111,30 @@
     <div :options="options" v-model="timezone" @input></div>
     <div class="sel-timezone">时区：{{timezone}}</div>
     <Row class="line-bg">
-      <col :span="1"></col>
-      <Col :span="1"></Col>
-      <Col :span="1"></Col>
-      <Col :span="1"></Col>
-      <Col :span="1"></Col>
-      <Col :span="1"></Col>
-      <Col :span="1"></Col>
-      <Col :span="1"></Col>
-      <Col :span="1"></Col>
-      <Col :span="1"></Col>
-      <Col :span="1"></Col>
-      <Col :span="1"></Col>
-      <Col :span="1"></Col>
-      <Col :span="1"></Col>
-      <Col :span="1"></Col>
-      <Col :span="1"></Col>
-      <Col :span="1"></Col>
-      <Col :span="1"></Col>
-      <Col :span="1"></Col>
-      <Col :span="1"></Col>
-      <Col :span="1"></Col>
-      <Col :span="1"></Col>
-      <Col :span="1"></Col>
-      <Col :span="1"></Col>
+      <col span="1"></col>
+      <Col span="1"></Col>
+      <Col span="1"></Col>
+      <Col span="1"></Col>
+      <Col span="1"></Col>
+      <Col span="1"></Col>
+      <Col span="1"></Col>
+      <Col span="1"></Col>
+      <Col span="1"></Col>
+      <Col span="1"></Col>
+      <Col span="1"></Col>
+      <Col span="1"></Col>
+      <Col span="1"></Col>
+      <Col span="1"></Col>
+      <Col span="1"></Col>
+      <Col span="1"></Col>
+      <Col span="1"></Col>
+      <Col span="1"></Col>
+      <Col span="1"></Col>
+      <Col span="1"></Col>
+      <Col span="1"></Col>
+      <Col span="1"></Col>
+      <Col span="1"></Col>
+      <Col span="1"></Col>
     </Row>
   </div>
 </template>
@@ -169,15 +169,34 @@ export default {
       }
     };
   },
-  computed: {},
+  computed: {
+  },
   methods: {
+    getZoneTime(offset) {
+      debugger
+      // 取本地时间
+      var localtime = new Date();
+      // 取本地毫秒数
+      var localmesc = localtime.getTime();
+      // 取本地时区与格林尼治所在时区的偏差毫秒数
+      var localOffset = localtime.getTimezoneOffset() * 60000;
+      // 反推得到格林尼治时间
+      var utc = localOffset + localmesc;
+      // 得到指定时区时间
+      var calctime = utc + (3600000 * offset);
+      var nd = new Date(calctime);
 
+      return nd;
+      //return nd.getFullYear()+"-"+nd.getUTCMonth()+"-"+nd.getDay() + " " + nd.toLocaleTimeString() ;
+    }
   },
   mounted: function () {
     var vm = this;
-    var $tzp = $(this.$el).timezonePicker(this.options)
+    var $tzp = $(this.$el).timezonePicker(this.options);
     $tzp.on('map:value:changed', function () {
-      console.log($(this).data('timezonePicker').getValue()[0]);
+      let data = $(this).data('timezonePicker').getValue()[0]
+      console.log(data);
+      console.log(vm.getZoneTime(data.offset));
       vm.timezone = $(this).data('timezonePicker').getValue()[0].timezone;
       //vm.$emit('timezonePicker',vm.timezone)
     })
